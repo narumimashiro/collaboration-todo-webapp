@@ -1,0 +1,32 @@
+.BTW_strong-button {
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.BTW_strongButton-light {
+  color: #ffffff;
+  background-color: #000000;
+  border: 2px solid #000000;
+  @extend .BTW_strong-button;
+  &:hover {
+    background-color: var(--dark-hover-color);
+  }
+  &:disabled {
+    color: var(--dark-disabled-text-color);
+    background-color: #000000;
+  }
+}
+
+.BTW_strongButton-dark {
+  color: #000000;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  @extend .BTW_strong-button;
+  &:hover {
+    background-color: var(--light-hover-color);
+  }
+  &:disabled {
+    color: var(--light-disabled-text-color);
+    background-color: #ffffff;
+  }
+}

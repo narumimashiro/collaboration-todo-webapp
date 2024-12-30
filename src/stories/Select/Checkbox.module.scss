@@ -1,0 +1,88 @@
+.BTW_checkbox-wrap {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: inherit;
+}
+
+.BTW_checkbox {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.BTW_checkmark {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 9px;
+  border: solid;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.BTW_checkbox-light {
+  @extend .BTW_checkbox;
+  background-color: inherit;
+  border: 2px solid #000000;
+  &::after {
+    @extend .BTW_checkmark;
+    border-color: #000000;
+    display: none;
+  }
+  &.BTW_checked::after {
+    display: block;
+  }
+  &.BTW_filling.BTW_checked {
+    background-color: var(--dark-background-color);
+
+    &.BTW_disabled {
+      background-color: var(--light-disabled-text-color);
+    }
+  }
+  &.BTW_filling.BTW_checked::after {
+    border-color: #ffffff;
+  }
+  &.BTW_disabled {
+    border: 2px solid var(--light-disabled-text-color);
+  }
+  input[type='checkbox'] {
+    visibility: hidden;
+  }
+}
+
+.BTW_checkbox-dark {
+  @extend .BTW_checkbox;
+  background-color: inherit;
+  border: 2px solid #ffffff;
+  &::after {
+    @extend .BTW_checkmark;
+    border-color: #ffffff;
+    display: none;
+  }
+  &.BTW_checked::after {
+    display: block;
+  }
+  &.BTW_filling.BTW_checked {
+    background-color: var(--light-background-color);
+
+    &.BTW_disabled {
+      background-color: var(--dark-disabled-text-color);
+    }
+  }
+  &.BTW_filling.BTW_checked::after {
+    border-color: #000000;
+  }
+  &.BTW_disabled {
+    border: 2px solid var(--dark-disabled-text-color);
+  }
+  input[type='checkbox'] {
+    visibility: hidden;
+  }
+}

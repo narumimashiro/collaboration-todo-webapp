@@ -1,0 +1,131 @@
+.BTW_tabs {
+  min-width: 60%;
+  margin-bottom: 24px;
+}
+
+.BTW_underline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  position: relative;
+  font-weight: bold;
+
+  span {
+    line-height: 30px;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: 5%;
+    left: 5%;
+    height: 1px;
+  }
+
+  &.BTW_not-selected {
+    opacity: 0.6;
+    font-weight: normal;
+  }
+}
+
+.BTW_underline-light {
+  @extend .BTW_underline;
+  &::before {
+    background-color: #000000;
+  }
+}
+
+.BTW_underline-dark {
+  @extend .BTW_underline;
+  &::before {
+    background-color: #ffffff;
+  }
+}
+
+.BTW_stickynote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 96%;
+  height: 39px;
+  position: relative;
+  padding: 2px;
+
+  span {
+    line-height: 30px;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: 100%;
+    left: -4%;
+    height: 1px;
+  }
+
+  &.BTW_selected {
+    border-left: 1px solid;
+    border-right: 1px solid;
+  }
+
+  &.BTW_selected::before {
+    left: calc(-4% - 3px);
+  }
+
+  &.BTW_first-sticky::before {
+    left: -20%;
+  }
+
+  &.BTW_last-sticky::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: -20%;
+    left: 100%;
+    height: 1px;
+  }
+}
+
+.BTW_stickynote-light {
+  @extend .BTW_stickynote;
+  &::before,
+  &::after {
+    background-color: var(--apple-site-light-gray);
+  }
+  &.BTW_selected {
+    box-shadow: 0 -1px 0 0 var(--apple-site-light-gray);
+    border-color: var(--apple-site-light-gray);
+  }
+  &.BTW_not-selected {
+    background-color: var(--apple-site-light-gray);
+  }
+}
+
+.BTW_stickynote-dark {
+  @extend .BTW_stickynote;
+  &::before,
+  &::after {
+    background-color: var(--dark-hover-color);
+  }
+  &.BTW_selected {
+    box-shadow: 0 -1px 0 0 var(--dark-hover-color);
+    border-color: var(--dark-hover-color);
+  }
+  &.BTW_not-selected {
+    background-color: var(--dark-hover-color);
+  }
+}
+
+// TabPanel Style
+.BTW_tabpanel-visible {
+  display: block;
+}
+
+.BTW_tabpanel-hidden {
+  display: none;
+}

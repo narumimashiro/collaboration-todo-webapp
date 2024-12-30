@@ -1,0 +1,67 @@
+$summary-height: 30px;
+
+.BTW_accordionWrap {
+  width: 100%;
+
+  &.light,
+  &.light button {
+    color: inherit;
+    background-color: inherit;
+  }
+  &.dark,
+  &.dark .default {
+    color: inherit;
+    background-color: inherit;
+  }
+
+  .BTW_summary {
+    position: relative;
+    width: 100%;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: $summary-height;
+    min-height: $summary-height;
+    margin: 3.9px 0;
+    height: auto;
+    border: none;
+    text-align: left;
+    z-index: 2;
+
+    .BTW_arrowIcon {
+      position: absolute;
+      bottom: 0;
+      right: 10px;
+      width: $summary-height * 0.7;
+      height: $summary-height;
+      transition: transform 0.3s ease-out;
+      &.BTW_clockwise {
+        transform: rotate(180deg);
+      }
+      &.BTW_counterclockwise {
+        transform: rotate(0);
+      }
+    }
+  }
+
+  .BTW_details {
+    padding: 0 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+
+    .BTW_detailText {
+      margin: 10px 0;
+    }
+  }
+}
+
+.BTW_horizon-light {
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  width: 100%;
+  margin: 0;
+}
+
+.BTW_horizon-dark {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  width: 100%;
+  margin: 0;
+}
