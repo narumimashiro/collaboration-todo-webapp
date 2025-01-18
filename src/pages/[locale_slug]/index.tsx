@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next'
 
 // MyComponents
 import Meta from '@/components/meta'
+import { PageTemplateWithHeader } from '@/components/molecules/pageComponents'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { language }: { language: string[] } = require('@/locales/config')
@@ -33,6 +34,7 @@ const MainPage = () => {
   return (
     <>
       <Meta pageTitle={t('STRID_cmn_pagetitle').replace('{var}', t('TEMP_Top'))} />
+      <PageTemplateWithHeader>TODO: implement code here</PageTemplateWithHeader>
     </>
   )
 }

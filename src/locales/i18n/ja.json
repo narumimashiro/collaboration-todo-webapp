@@ -1,5 +1,5 @@
 {
-  "STRID_cmn_pagetitle": "{var} | ポートフォリオ",
+  "STRID_cmn_pagetitle": "TODO タスク管理",
   "STRID_not_found": "ページが見つかりません",
   "STRID_cmn_ok": "OK",
   "STRID_cmn_unsupport": "サポートしていません。",
@@ -21,5 +21,6 @@
   "STRID_menu_annotation_mode_change": "この設定は現在のブラウザにのみ適用されます。",
   "STRID_menu_sitemap": "サイトマップ",
   "STRID_meta_top": "ポートフォリオ",
-  "STRID_faq_title": "よくある質問"
+  "STRID_faq_title": "よくある質問",
+  "STRID_page_Title": "TODO タスク管理"
 }

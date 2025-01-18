@@ -24,9 +24,10 @@ const App = ({ Component, pageProps }: AppProps) => {
     <RecoilRoot>
       <React.StrictMode>
         <CustomProvider>
-          <LayoutWithMenu>
-            <Component {...pageProps} />
-          </LayoutWithMenu>
+          {/* TODO: Look for this component for dark/light change and languague change */}
+          {/* <LayoutWithMenu> */}
+          <Component {...pageProps} />
+          {/* </LayoutWithMenu> */}
         </CustomProvider>
       </React.StrictMode>
     </RecoilRoot>

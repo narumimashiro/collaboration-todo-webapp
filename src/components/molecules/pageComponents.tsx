@@ -1,6 +1,7 @@
-import styles from '@/styles/molecules/pageComponents.module.scss'
+import styles from '@/styles/molecules/PageComponents.module.scss'
 
 import { useCustomContext } from '@/components/customProvider'
+import { useTranslation } from 'react-i18next'
 
 type PageTemplateProps = {
   children: React.ReactNode
@@ -13,45 +14,29 @@ export const PageTemplate = ({ children }: PageTemplateProps) => {
   return <div className={styles[`page-contents-wrap-${pageSize}`]}>{children}</div>
 }
 
-type ImageHeaderProps = {
-  className?: string
-  imgSrc: string
-  title?: string
-  subTitle?: string
-}
-export const ImageHeader = (props: ImageHeaderProps) => {
-  const { className = '', imgSrc, title, subTitle } = props
+// Used only in Main Page
+export const MainHeader = () => {
   const { isPortrait } = useCustomContext()
+  const { t } = useTranslation()
 
   return (
     <div
-      className={`${styles['image-header']} ${isPortrait ? styles.portrait : styles.landscape} ${className}`}>
-      <img src={imgSrc} alt="" />
-      <div
-        className={`absolute-center ${styles.description} ${isPortrait ? styles.portrait : ''}`}>
-        <p className={styles.title}>{title}</p>
-        <p className={styles.subtitle}>{subTitle}</p>
-      </div>
+      className={`flex-center ${styles['main-header']} ${isPortrait ? styles.portrait : styles.landscape}`}>
+      <h1 className={styles.title}>{t('STRID_page_Title')}</h1>
     </div>
   )
 }
 
 type PageTemplateWithHeaderProp = {
   children: React.ReactNode
-  className?: string
-} & ImageHeaderProps
+}
 
 export const PageTemplateWithHeader = (props: PageTemplateWithHeaderProp) => {
-  const { children, className = '' } = props
+  const { children } = props
 
   return (
     <>
-      <ImageHeader
-        className={className}
-        imgSrc={props.imgSrc}
-        title={props.title}
-        subTitle={props.subTitle}
-      />
+      <MainHeader />
       <PageTemplate>{children}</PageTemplate>
     </>
   )
